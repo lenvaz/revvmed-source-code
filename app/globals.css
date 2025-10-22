@@ -167,6 +167,7 @@
 
 :root {
   --radius: 2px;
+  --hero-bg-image: url('/home_page_2.jpg');
   --background: #f8fffe;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
@@ -256,7 +257,7 @@
 }
 
 .hero-main-bg {
-  background-image: url('/home_page_2.jpg');
+  background-image: var(--hero-bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

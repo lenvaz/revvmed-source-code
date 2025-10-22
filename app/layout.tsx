@@ -5,6 +5,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { BasePathCSSVariables } from "@/components/BasePathCSSVariables";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({
         className={`${raleway.variable} antialiased`}
       >
         <ErrorBoundary>
+          <BasePathCSSVariables />
           <div className="min-h-screen bg-gray-50">
             <Header />
             <main>
