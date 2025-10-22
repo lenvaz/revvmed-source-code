@@ -1,0 +1,279 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideNext {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slidePrev {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes countUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate="false"] .animate-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[data-animate="true"] .animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+[data-animate="false"] .animate-fade-in {
+  opacity: 0;
+}
+
+[data-animate="true"] .animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+[data-animate="false"] .animate-scale-up {
+  transform: scale(0.95);
+}
+
+[data-animate="true"] .animate-scale-up {
+  animation: scaleUp 0.3s ease-out forwards;
+}
+
+[data-animate="false"] .animate-count-up {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+[data-animate="true"] .animate-count-up {
+  animation: countUp 0.8s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-raleway);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 2px;
+  --background: #f8fffe;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: #ffffff;
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #A594F9;
+  --primary-foreground: #ffffff;
+  --secondary: #B19CD9;
+  --secondary-foreground: #ffffff;
+  --muted: #A8E6CF;
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: #70CAD1;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #88D8C0;
+  --input: #88D8C0;
+  --ring: #70CAD1;
+  --chart-1: #A594F9;
+  --chart-2: #B19CD9;
+  --chart-3: #70CAD1;
+  --chart-4: #88D8C0;
+  --chart-5: #A8E6CF;
+  --sidebar: #f8fffe;
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #A594F9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #A8E6CF;
+  --sidebar-accent-foreground: oklch(0.145 0 0);
+  --sidebar-border: #88D8C0;
+  --sidebar-ring: #70CAD1;
+}
+
+.dark {
+  --background: #1a1a2e;
+  --foreground: #ffffff;
+  --card: #16213e;
+  --card-foreground: #ffffff;
+  --popover: #16213e;
+  --popover-foreground: #ffffff;
+  --primary: #C8A8E9;
+  --primary-foreground: #1a1a2e;
+  --secondary: #A594F9;
+  --secondary-foreground: #ffffff;
+  --muted: #0f3460;
+  --muted-foreground: #a1a1aa;
+  --accent: #88D8C0;
+  --accent-foreground: #1a1a2e;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(136, 216, 192, 0.2);
+  --input: rgba(136, 216, 192, 0.3);
+  --ring: #70CAD1;
+  --chart-1: #C8A8E9;
+  --chart-2: #A594F9;
+  --chart-3: #88D8C0;
+  --chart-4: #70CAD1;
+  --chart-5: #A8E6CF;
+  --sidebar: #16213e;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #C8A8E9;
+  --sidebar-primary-foreground: #1a1a2e;
+  --sidebar-accent: #0f3460;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(136, 216, 192, 0.2);
+  --sidebar-ring: #70CAD1;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  p {
+    @apply text-justify leading-relaxed text-lg;
+  }
+}
+
+/* Custom classes to replace inline styles for better CSP security */
+.hero-section-bg {
+  background-image: url('/buisness_card.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--background);
+}
+
+.hero-main-bg {
+  background-image: url('/home_page_2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.progress-bar-90 {
+  width: 90%;
+}
+
+.progress-bar-85 {
+  width: 85%;
+}
+
+.progress-bar-100 {
+  width: 100%;
+}
+
+.iframe-borderless {
+  border: 0;
+}

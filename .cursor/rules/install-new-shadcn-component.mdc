@@ -1,0 +1,7 @@
+---
+description: To install a new shadcn component make use of below syntax
+globs: 
+alwaysApply: false
+---
+To install a new shadcn component make use of below syntax
+```npx shadcn@latest add <component-name>```

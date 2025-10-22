@@ -1,0 +1,46 @@
+{
+  "name": "revvmed",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build:optimized": "npm run optimize-images && next build",
+    "build": "next build",
+    "start": "next start",
+    "preview": "npm run build && npx serve out -p 3000",
+    "preview:build": "npx serve out -p 3000",
+    "lint": "next lint",
+    "optimize-images": "node scripts/convert-images.js",
+    "svgr": "svgr --icon --typescript --title-prop --replace-attr-values \"#000=currentColor\" --out-dir components/icons"
+  },
+  "dependencies": {
+    "@formspree/react": "^3.0.0",
+    "@radix-ui/react-accordion": "^1.2.11",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-navigation-menu": "^1.2.14",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "lucide-react": "^0.539.0",
+    "next": "15.3.3",
+    "react": "^19.0.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.3.1",
+    "vaul": "^1.1.2"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^8.1.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.4",
+    "typescript": "^5"
+  }
+}
