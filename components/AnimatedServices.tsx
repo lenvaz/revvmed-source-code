@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useInView } from "@/hooks/useInView";
+import { useRouter } from "next/navigation";
 
 export function AnimatedServices() {
   const [servicesRef, servicesInView] = useInView();
+  const { push } = useRouter();
 
   return (
     <section 
@@ -28,6 +30,7 @@ export function AnimatedServices() {
               <Button
                 variant="outline"
                 className="self-start border-gray-200 text-gray-700 hover:bg-accent hover:text-white hover:border-white/50 transform transition-transform hover:translate-x-1"
+                onClick={() => push("/for-payer")}
               >
                 Learn More &gt;&gt;
               </Button>
@@ -47,6 +50,7 @@ export function AnimatedServices() {
               <Button
                 variant="outline"
                 className="self-start border-gray-200 text-gray-700 hover:bg-accent hover:text-white hover:border-white/50 transform transition-transform hover:translate-x-1"
+                onClick={() => push("/for-provider-mso")}
               >
                 Learn More &gt;&gt;
               </Button>
@@ -65,6 +69,7 @@ export function AnimatedServices() {
               <Button
                 variant="outline"
                 className="self-start border-gray-200 text-gray-700 hover:bg-accent hover:text-white hover:border-white/50 transform transition-transform hover:translate-x-1"
+                onClick={() => push("/for-dme")}
               >
                 Learn More &gt;&gt;
               </Button>
