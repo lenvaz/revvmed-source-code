@@ -4,8 +4,8 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   // basePath: "",
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || "",
+  basePath: process.env.NODE_ENV === "production" ? process.env.NEXT_PUBLIC_BASE_PATH || "" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? process.env.NEXT_PUBLIC_BASE_PATH || "" : "",
   images: {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'], // Preferred formats for optimization

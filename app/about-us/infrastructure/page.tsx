@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { Card } from '@/components/ui/card'
 import { APP_NAME } from '@/lib/constants'
+import ImageWithBasePath from '@/components/ImageWithBasePath'
 
 export const metadata: Metadata = {
   title: `Infrastructure | ${APP_NAME}`,
@@ -37,10 +38,12 @@ export default function InfrastructurePage() {
         {infrastructureImages.map((image, index) => (
           <Card key={index} className="overflow-hidden bg-card/50 hover:bg-card/80 transition-all duration-300 shadow-none border-none group">
             <div className="aspect-video relative">
-              <img
+              <ImageWithBasePath
                 src={image.src}
                 alt={image.alt}
                 className="object-cover w-full h-full"
+                width={500}
+                height={300}
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white text-sm font-medium">{image.alt}</p>

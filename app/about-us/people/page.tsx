@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { Card } from '@/components/ui/card'
 import { APP_NAME } from '@/lib/constants'
+import ImageWithBasePath from '@/components/ImageWithBasePath'
 
 export const metadata: Metadata = {
   title: `Our People | ${APP_NAME}`,
@@ -70,10 +71,12 @@ export default function PeoplePage() {
         {teamMembers.map((member, index) => (
           <Card key={index} className="overflow-hidden bg-card/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-none border-none group">
             <div className="aspect-[4/3] relative">
-              <img
+              <ImageWithBasePath
                 src={member.image}
                 alt={member.name}
                 className="object-cover w-full h-full"
+                width={500}
+                height={300}
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <p className="text-white text-sm mb-4">{member.bio}</p>

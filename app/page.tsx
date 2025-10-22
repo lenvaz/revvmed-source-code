@@ -5,6 +5,7 @@ import { AnimatedServices } from "@/components/AnimatedServices";
 import { AnimatedTestimonials } from "@/components/AnimatedTestimonials";
 import { useRouter } from "next/navigation";
 import { APP_NAME } from "@/lib/constants";
+import ImageWithBasePath from "@/components/ImageWithBasePath";
 
 export default function Home() {
   const { push } = useRouter();
@@ -87,7 +88,7 @@ export default function Home() {
               <div className="absolute -bottom-8 right-12 w-16 h-16 bg-primary/15 rounded-full" />
 
               <div className="relative rounded-2xl overflow-hidden shadow-md">
-                <img
+                <ImageWithBasePath
                   src="/home_page_1.jpg"
                   alt="Healthcare professionals team"
                   className="w-full h-auto object-cover"
@@ -98,10 +99,10 @@ export default function Home() {
 
               {/* Decorative Icons */}
               <div className="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-md">
-                <img src="/icons/medical-icon.svg" alt="" className="w-8 h-8" />
+                <ImageWithBasePath src="/icons/medical-icon.svg" alt="" className="w-8 h-8" width={32} height={32} />
               </div>
               <div className="absolute bottom-12 -left-6 bg-white p-3 rounded-full shadow-md">
-                <img src="/icons/dna-icon.svg" alt="" className="w-8 h-8" />
+                <ImageWithBasePath src="/icons/dna-icon.svg" alt="" className="w-8 h-8" width={32} height={32} />
               </div>
             </div>
           </div>

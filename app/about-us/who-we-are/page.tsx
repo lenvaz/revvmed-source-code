@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Card } from "@/components/ui/card";
 import { HeroSection } from "@/components/ui/hero-section";
 import { APP_NAME } from "@/lib/constants";
+import ImageWithBasePath from "@/components/ImageWithBasePath";
 
 export const metadata: Metadata = {
   title: `Who We Are | ${APP_NAME}`,
@@ -15,7 +16,7 @@ export default function WhoWeArePage() {
       <div className="w-full relative bg-gradient-to-r from-primary/10 to-accent/10 mb-16">
         <HeroSection
           title="About the Company"
-          description="Founded in 1999, {APP_NAME} has been at the vanguard of delivering cutting-edge healthcare solutions, transforming the way healthcare organizations optimize their operations and enhance patient outcomes. Our expertise extends across a broad spectrum of healthcare entities, including physicians, independent practitioners, HMOs, ACOs, IPAs, MSOs, DME manufacturers, and payers."
+          description={`Founded in 1999, ${APP_NAME} has been at the vanguard of delivering cutting-edge healthcare solutions, transforming the way healthcare organizations optimize their operations and enhance patient outcomes. Our expertise extends across a broad spectrum of healthcare entities, including physicians, independent practitioners, HMOs, ACOs, IPAs, MSOs, DME manufacturers, and payers.`}
           contentClassName="bg-white/60 w-fit rounded-2xl"
         />
       </div>
@@ -79,10 +80,12 @@ export default function WhoWeArePage() {
             </p>
           </div>
           <div className="relative h-64 overflow-hidden rounded-2xl hover:scale-105 transition-all duration-300">
-            <img
+            <ImageWithBasePath
               src="/about_us_1.jpg"
               alt="CSR Initiative"
               className="rounded-2xl object-cover w-full h-full"
+              width={500}
+              height={300}
             />
           </div>
         </div>
