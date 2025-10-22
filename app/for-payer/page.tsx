@@ -1,6 +1,7 @@
 import React from 'react';
 import { PayerPageLayout } from '@/components/layouts/PayerPageLayout';
 import { APP_NAME } from '@/lib/constants';
+import { basePath } from '@/lib/basePath';
 
 export default function PayerServicesPage() {
   const statistics = [
@@ -13,27 +14,27 @@ export default function PayerServicesPage() {
     {
       title: 'Medical Record Retrieval',
       description: `Whether through digital or traditional methods, ${APP_NAME} offers a comprehensive and efficient, one-stop service for all your record retrieval needs.`,
-      link: '/for-payer/record-retrieval'
+      link: `${basePath}/for-payer/record-retrieval`
     },
     {
       title: 'Medical Record Coding',
       description: `${APP_NAME} delivers high quality coding results that enable providers and health plans accurately capture their population risk.`,
-      link: '/for-payer/medical-coding'
+      link: `${basePath}/for-payer/medical-coding`
     },
     {
       title: 'Medical Record Abstraction',
       description: `${APP_NAME} delivers high quality abstraction results that enable providers and health plans achieve high quality scores and close care gaps.`,
-      link: '/for-payer/abstraction'
+      link: `${basePath}/for-payer/abstraction`
     },
     {
       title: 'Reporting and Analytics',
       description: `${APP_NAME} provides comprehensive back-office data and analytical and reporting services, offering tailored solutions to handle all your data management and reporting needs.`,
-      link: '/for-payer/analytics'
+      link: `${basePath}/for-payer/analytics`
     },
     {
       title: 'Supplemental Services',
       description: `${APP_NAME} provides value-added supplemental services which are curated based on customer needs.`,
-      link: '/for-payer/supplemental-services'
+      link: `${basePath}/for-payer/supplemental-services`
     }
   ];
 

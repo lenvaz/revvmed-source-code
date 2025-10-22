@@ -1,4 +1,5 @@
 import { ProviderPageLayout } from '@/components/layouts/ProviderPageLayout';
+import { basePath } from '@/lib/basePath';
 
 export default function ProviderMSOPage() {
   const statistics = [
@@ -43,27 +44,27 @@ export default function ProviderMSOPage() {
     {
       title: 'Revenue Cycle Management',
       description: 'End-to-end innovative and flexible RCM services to eliminate inefficiencies in the processes and improve financial outcomes resulting in AR goal savings and improve revenue margins for providers.',
-      link: '/for-provider-mso/revenue-cycle',
+      link: `${basePath}/for-provider-mso/revenue-cycle`,
     },
     {
       title: 'Risk Adjustment',
       description: 'Integrated end-to-end risk adjustment solutions to capture complete data with unmatched accuracy, and assist you interpret it to close gaps and improve patient outcomes.',
-      link: '/for-provider-mso/risk-adjustment',
+      link: `${basePath}/for-provider-mso/risk-adjustment`,
     },
     {
       title: 'Claims, Analytics and Reporting',
       description: 'Claim back-office setup, analytical and reporting services, offering tailored solutions to handle all your administrative, data management and reporting needs.',
-      link: '/for-provider-mso/claims-management',
+      link: `${basePath}/for-provider-mso/claims-management`,
     },
     {
       title: 'HEDIS Quality Measures',
       description: 'High quality abstraction results that enable providers achieve high quality scores and close care gaps.',
-      link: '/for-provider-mso/hedis',
+      link: `${basePath}/for-provider-mso/hedis`,
     },
     {
       title: 'Supplemental Services',
       description: 'Tailor made supplemental services which are curated based on customer needs.',
-      link: '/for-provider-mso/supplemental-services',
+      link: `${basePath}/for-provider-mso/supplemental-services`,
     },
   ];
 

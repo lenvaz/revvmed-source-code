@@ -1,6 +1,7 @@
 import React from 'react';
 import { PayerPageLayout } from '@/components/layouts/PayerPageLayout';
 import { APP_NAME } from '@/lib/constants';
+import { basePath } from '@/lib/basePath';
 
 export default function HedisPage() {
   const statistics = [
@@ -20,22 +21,22 @@ export default function HedisPage() {
     {
       title: 'People at Core',
       description: 'We recruit top-tier talent and provide comprehensive training to our HEDIS abstractors and nurses. This average experience of our abstractors and nurses is 3 years which enables us to deliver the highest level of accuracy and compliance on every aspect of our HEDIS process.',
-      link: '/for-payer/hedis'
+      link: `${basePath}/for-payer/hedis`
     },
     {
       title: 'Client specific and NCQA compliant Guidelines',
       description: `${APP_NAME} offers flexibility with quality projects, utilizing NCQA standard guidelines—or custom guidelines provided by the health plan and providers.`,
-      link: '/for-payer/hedis'
+      link: `${basePath}/for-payer/hedis`
     },
     {
       title: 'Robust Quality Assurance',
       description: 'Our audit team consists of highly skilled quality auditors certified in quality management systems and six sigma. We use robust sampling methods, knowledge attribute analysis and effective 5-why analysis and remediation plans.',
-      link: '/for-payer/hedis'
+      link: `${basePath}/for-payer/hedis`
     },
     {
       title: 'Flexible to match scale',
       description: "We'll tap into our network of experienced nurses and coders and resources that scale up and down as demand fluctuates. We complete thorough reviews quickly and correctly while providing staffing and project flexibility.",
-      link: '/for-payer/hedis'
+      link: `${basePath}/for-payer/hedis`
     },
   ];
 

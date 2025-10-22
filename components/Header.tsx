@@ -12,6 +12,7 @@ import {
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { basePath } from "@/lib/basePath";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,61 +31,61 @@ export default function Header() {
   const navItems = [
     {
       label: "ABOUT US",
-      href: "/about-us",
+      href: `${basePath}/about-us`,
       children: [
-        { label: "Who We Are", href: "/about-us/who-we-are" },
-        { label: "Our People", href: "/about-us/people" },
-        { label: "Infrastructure", href: "/about-us/infrastructure" },
+        { label: "Who We Are", href: `${basePath}/about-us/who-we-are` },
+        { label: "Our People", href: `${basePath}/about-us/people` },
+        { label: "Infrastructure", href: `${basePath}/about-us/infrastructure` },
       ],
     },
     {
       label: "FOR PAYER",
-      href: "/for-payer",
+      href: `${basePath}/for-payer`,
       children: [
-        { label: "Overview Payer", href: "/for-payer" },
-        { label: "Record Retrieval", href: "/for-payer/record-retrieval" },
-        { label: "Medical Record Coding", href: "/for-payer/medical-coding" },
-        { label: "Medical Record Abstraction", href: "/for-payer/abstraction" },
-        { label: "Reporting and Analytics", href: "/for-payer/analytics" },
+        { label: "Overview Payer", href: `${basePath}/for-payer` },
+        { label: "Record Retrieval", href: `${basePath}/for-payer/record-retrieval` },
+        { label: "Medical Record Coding", href: `${basePath}/for-payer/medical-coding` },
+        { label: "Medical Record Abstraction", href: `${basePath}/for-payer/abstraction` },
+        { label: "Reporting and Analytics", href: `${basePath}/for-payer/analytics` },
         {
           label: "Supplemental Services",
-          href: "/for-payer/supplemental-services",
+          href: `${basePath}/for-payer/supplemental-services`,
         },
       ],
     },
     {
       label: "FOR PROVIDER/MSO",
-      href: "/for-provider-mso",
+      href: `${basePath}/for-provider-mso`,
       children: [
-        { label: "Overview Provider", href: "/for-provider-mso" },
+        { label: "Overview Provider", href: `${basePath}/for-provider-mso` },
         {
           label: "Revenue Cycle Management",
-          href: "/for-provider-mso/revenue-cycle",
+          href: `${basePath}/for-provider-mso/revenue-cycle`,
         },
-        { label: "Risk Adjustment", href: "/for-provider-mso/risk-adjustment" },
+        { label: "Risk Adjustment", href: `${basePath}/for-provider-mso/risk-adjustment` },
         {
           label: "Claims, Analytics and Reporting",
-          href: "/for-provider-mso/claims-management",
+          href: `${basePath}/for-provider-mso/claims-management`,
         },
-        { label: "HEDIS Quality Measures", href: "/for-provider-mso/hedis" },
+        { label: "HEDIS Quality Measures", href: `${basePath}/for-provider-mso/hedis` },
         {
           label: "Supplemental Services",
-          href: "/for-provider-mso/supplemental-services",
+          href: `${basePath}/for-provider-mso/supplemental-services`,
         },
       ],
     },
     {
       label: "FOR DME",
-      href: "/for-dme",
+      href: `${basePath}/for-dme`,
       children: [
-        { label: "Overview- DME", href: "/for-dme" },
-        { label: "Order Management", href: "/for-dme/order-management" },
-        { label: "Authorization Management", href: "/for-dme/authorization" },
-        { label: "Medical Billing", href: "/for-dme/medical-billing" },
-        { label: "Customer Support", href: "/for-dme/customer-service" },
+        { label: "Overview- DME", href: `${basePath}/for-dme` },
+        { label: "Order Management", href: `${basePath}/for-dme/order-management` },
+        { label: "Authorization Management", href: `${basePath}/for-dme/authorization` },
+        { label: "Medical Billing", href: `${basePath}/for-dme/medical-billing` },
+        { label: "Customer Support", href: `${basePath}/for-dme/customer-service` },
       ],
     },
-    { label: "CONTACT US", href: "/contact-us" },
+    { label: "CONTACT US", href: `${basePath}/contact-us` },
   ];
 
   return (

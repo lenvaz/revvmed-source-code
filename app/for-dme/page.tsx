@@ -1,4 +1,5 @@
 import { ProviderPageLayout } from '@/components/layouts/ProviderPageLayout';
+import { basePath } from '@/lib/basePath';
 import { APP_NAME } from '@/lib/constants';
 
 export default function DMEPage() {
@@ -44,22 +45,22 @@ export default function DMEPage() {
     {
       title: 'Order Management',
       description: "With over 10+years of experience in DME Order management, our team knows how important it is to deliver the DME equipment's and supplies as it is the part of your care plan.",
-      link: '/for-dme/order-management',
+      link: `${basePath}/for-dme/order-management`,
     },
     {
       title: 'Authorization Management',
       description: `Correct coding and documenting the required procedure before the treatment is the key for timely authorization. This is often a challenging task. At ${APP_NAME}, We collect the necessary documents and file prior authorization which reduces the chances of denials.`,
-      link: '/for-dme/authorization',
+      link: `${basePath}/for-dme/authorization`,
     },
     {
       title: 'Medical Billing Solutions',
       description: 'Our specialized team handles from completing necessary DME documentation to claims follow-up and A/R management. We are home to certified professional coders (CPC) and billers (CPB) who bring the required expertise needed to ensure faster payments, fewer errors, fewer claims denials, and reduced risk of compliance issues.',
-      link: '/for-dme/medical-billing',
+      link: `${basePath}/for-dme/medical-billing`,
     },
     {
       title: 'Customer Support',
       description: 'Customer support & revenue cycle management (RCM) is a key part of the process of tracking a patient\'s interactions with a healthcare provider from start to finish. Our expertise team make sure to understand the customer, Communicate effectively and provide good customer experience.',
-      link: '/for-dme/customer-service',
+      link: `${basePath}/for-dme/customer-service`,
     },
   ];
 
