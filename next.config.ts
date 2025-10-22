@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   // basePath: "",
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
-  assetPrefix: "",
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || "",
   images: {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'], // Preferred formats for optimization
