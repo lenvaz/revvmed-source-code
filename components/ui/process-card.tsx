@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from './card';
 import Image from 'next/image';
+import ImageWithBasePath from '../ImageWithBasePath';
 
 interface ProcessCardProps {
   icon: string;
@@ -13,7 +14,7 @@ export function ProcessCard({ icon, title, description, className = '' }: Proces
   return (
     <Card className={`p-6 flex flex-col items-start gap-4 ${className}`}>
       <div className="w-12 h-12 relative">
-        <Image
+        <ImageWithBasePath
           src={icon}
           alt={title}
           fill

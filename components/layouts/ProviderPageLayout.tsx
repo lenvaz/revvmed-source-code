@@ -4,6 +4,7 @@ import { StatisticCard } from "@/components/ui/statistic-card";
 import AnimatedCard from "@/components/ui/animated-card";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import ImageWithBasePath from "../ImageWithBasePath";
 
 interface Statistic {
   value: string;
@@ -76,7 +77,7 @@ export function ProviderPageLayout({
               </p>
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
-              <Image
+              <ImageWithBasePath
                 src="/patient_doctor_talking_1.jpg"
                 alt="Provider Partnership"
                 fill
