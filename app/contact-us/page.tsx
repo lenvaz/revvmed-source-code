@@ -1,17 +1,26 @@
+'use client';
+
 import React from 'react';
-import { Metadata } from 'next';
+import { useForm, ValidationError } from "@formspree/react";
 import { HeroSection } from '@/components/ui/hero-section';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { FaPaperPlane } from "react-icons/fa";
 import { APP_NAME, COMPANY_EMAIL } from '@/lib/constants';
 
-export const metadata: Metadata = {
-  title: `Contact Us | ${APP_NAME}`,
-  description: `Get in touch with ${APP_NAME}. We would love to collaborate on your next project.`,
-};
+const ContactUsFormSpreeKey = process.env.NEXT_PUBLIC_CONTACT_US_FORM_SPREE_KEY || "";
 
 const ContactUsPage = () => {
+  const [state, handleSubmit] = useForm(ContactUsFormSpreeKey);
+  
+  // Handle missing form key gracefully
+  if (!ContactUsFormSpreeKey) {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Contact form configuration missing.');
+    }
+  }
+
   return (
     <div className="min-h-screen">
       <HeroSection
@@ -63,42 +72,78 @@ const ContactUsPage = () => {
           {/* Contact Form */}
           <div>
             <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-            <form className="space-y-6">
+            {!ContactUsFormSpreeKey ? (
+              <div className="space-y-4">
+                <p className="text-sm text-muted-foreground">Contact form is currently unavailable. Please email us directly at <a href={`mailto:${COMPANY_EMAIL}`} className="text-primary hover:underline">{COMPANY_EMAIL}</a></p>
+              </div>
+            ) : state.succeeded ? (
+              <div className="py-8">
+                <p className="text-lg font-semibold text-green-600">Thank you for your message! We'll get back to you soon.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input
-                  type="text"
-                  placeholder="First Name"
-                  className="bg-white"
-                />
-                <Input
-                  type="text"
-                  placeholder="Last Name"
-                  className="bg-white"
-                />
+                <div>
+                  <Input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    className="bg-white"
+                    required
+                  />
+                  <ValidationError prefix="First Name" field="firstName" errors={state.errors} />
+                </div>
+                <div>
+                  <Input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    className="bg-white"
+                    required
+                  />
+                  <ValidationError prefix="Last Name" field="lastName" errors={state.errors} />
+                </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input
-                  type="email"
-                  placeholder="E-mail"
-                  className="bg-white"
-                />
-                <Input
-                  type="text"
-                  placeholder="Company"
-                  className="bg-white"
-                />
+                <div>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    className="bg-white"
+                    required
+                  />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                </div>
+                <div>
+                  <Input
+                    type="text"
+                    name="company"
+                    placeholder="Company"
+                    className="bg-white"
+                  />
+                  <ValidationError prefix="Company" field="company" errors={state.errors} />
+                </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input
-                  type="tel"
-                  placeholder="Phone"
-                  className="bg-white"
-                />
-                <Input
-                  type="text"
-                  placeholder="Zip Code"
-                  className="bg-white"
-                />
+                <div>
+                  <Input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone"
+                    className="bg-white"
+                  />
+                  <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+                </div>
+                <div>
+                  <Input
+                    type="text"
+                    name="zipCode"
+                    placeholder="Zip Code"
+                    className="bg-white"
+                  />
+                  <ValidationError prefix="Zip Code" field="zipCode" errors={state.errors} />
+                </div>
               </div>
 
               {/* Solutions of Interest */}
@@ -106,49 +151,56 @@ const ContactUsPage = () => {
                 <h3 className="text-lg font-semibold mb-3">Solutions of Interest:</h3>
                 <div className="space-y-2">
                   <label className="flex items-center space-x-2">
-                    <input type="checkbox" className="form-checkbox text-orange-500" />
+                    <input type="checkbox" name="solutionsOfInterest" value="Managed Care Solutions" className="form-checkbox text-orange-500" />
                     <span>Managed Care Solutions</span>
                   </label>
                   <label className="flex items-center space-x-2">
-                    <input type="checkbox" className="form-checkbox text-orange-500" />
+                    <input type="checkbox" name="solutionsOfInterest" value="Risk Adjustment Solutions" className="form-checkbox text-orange-500" />
                     <span>Risk Adjustment Solutions</span>
                   </label>
                   <label className="flex items-center space-x-2">
-                    <input type="checkbox" className="form-checkbox text-orange-500" />
+                    <input type="checkbox" name="solutionsOfInterest" value="DME Home Health" className="form-checkbox text-orange-500" />
                     <span>DME Home Health</span>
                   </label>
                   <label className="flex items-center space-x-2">
-                    <input type="checkbox" className="form-checkbox text-orange-500" />
+                    <input type="checkbox" name="solutionsOfInterest" value="Revenue Cycle Management" className="form-checkbox text-orange-500" />
                     <span>Revenue Cycle Management</span>
                   </label>
                   <label className="flex items-center space-x-2">
-                    <input type="checkbox" className="form-checkbox text-orange-500" />
+                    <input type="checkbox" name="solutionsOfInterest" value="Healthcare Quality measures Solutions" className="form-checkbox text-orange-500" />
                     <span>Healthcare Quality measures Solutions</span>
                   </label>
                   <label className="flex items-center space-x-2">
-                    <input type="checkbox" className="form-checkbox text-orange-500" />
+                    <input type="checkbox" name="solutionsOfInterest" value="Accounts Receivable Management" className="form-checkbox text-orange-500" />
                     <span>Accounts Receivable Management</span>
                   </label>
                 </div>
+                <ValidationError prefix="Solutions of Interest" field="solutionsOfInterest" errors={state.errors} />
               </div>
 
               {/* Message */}
               <div>
                 <Textarea
+                  name="message"
                   placeholder="Your message"
                   rows={4}
                   className="bg-white"
+                  required
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
 
               {/* Submit Button */}
               <Button
                 type="submit"
+                disabled={state.submitting}
                 className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
               >
-                Submit
+                <FaPaperPlane size={16} className="mr-2" />
+                {state.submitting ? 'Submitting...' : 'Submit'}
               </Button>
             </form>
+            )}
           </div>
         </div>
       </div>

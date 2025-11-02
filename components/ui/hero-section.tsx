@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
+import { basePath } from '@/lib/basePath';
 
 interface HeroSectionProps {
   subtitle?: string;
@@ -15,7 +16,7 @@ export function HeroSection({ subtitle, title, description, children, className 
     <section 
       className={`relative py-8 ${className}`}
       style={{
-        backgroundImage: 'url(/page_header_cover_1.jpg)',
+        backgroundImage: `url(${basePath}/page_header_cover_1.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
