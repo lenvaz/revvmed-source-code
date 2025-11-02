@@ -3,8 +3,8 @@ import React from "react";
 import { Card } from "./card";
 import { Button } from "./button";
 import Link from "next/link";
-import { FileText } from "lucide-react";
 import { iconMap } from "@/lib/constants";
+import { basePath } from "@/lib/basePath";
 
 interface AnimatedCardProps {
   title: string;
@@ -48,7 +48,7 @@ const AnimatedCard = ({
     </Card>
   );
 
-  return link ? <Link href={link}>{CardContent}</Link> : CardContent;
+  return link ? <Link href={`${basePath}${link}`}>{CardContent}</Link> : CardContent;
 };
 
 export default AnimatedCard;

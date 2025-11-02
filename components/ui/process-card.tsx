@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card } from './card';
-import Image from 'next/image';
 import ImageWithBasePath from '../ImageWithBasePath';
 
 interface ProcessCardProps {

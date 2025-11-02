@@ -2,7 +2,6 @@ import React from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { StatisticCard } from "@/components/ui/statistic-card";
 import AnimatedCard from "@/components/ui/animated-card";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import ImageWithBasePath from "../ImageWithBasePath";
 
